@@ -126,6 +126,7 @@ const ContactForm = ({
     return (
         <div className="border p-4 mx-3 rounded-lg bg-black mt-3 relative">
             <button
+                type="button"
                 className="text-gray-300 cursor-pointer hover:text-gray-800 duration-300 hover:scale-125"
                 onClick={() => setIsExpanded((p) => !p)}>
                 {isExpanded ? "Hide ⮞" : "Show ⮟"}
@@ -230,6 +231,7 @@ const ContactForm = ({
                                 </Buttons>
                                 {isEditMode ? (
                                     <Buttons
+                                        type="button"
                                         onClick={handleCancel}
                                         className="  p-2 my-4   hover:bg-gray-900 ">
                                         Cancel Edit

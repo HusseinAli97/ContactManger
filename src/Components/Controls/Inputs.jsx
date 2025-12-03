@@ -16,6 +16,7 @@ const Inputs = ({
                 {label}
             </label>
             <input
+                name={name}
                 type={type}
                 value={value}
                 onChange={onChange}

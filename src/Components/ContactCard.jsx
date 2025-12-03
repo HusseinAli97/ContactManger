@@ -98,6 +98,7 @@ const ContactCard = ({
 
                 <div className="flex flex-col items-end gap-2">
                     <button
+                        type="button"
                         title="Toggle Favorite"
                         onClick={handleFav}
                         className="hover:scale-125 duration-300 text-shadow-gray-700 text-2xl text-shadow-2xs cursor-pointer ">
@@ -114,6 +115,7 @@ const ContactCard = ({
 
                     {/* Edit */}
                     <Buttons
+                        type={"button"}
                         title={"edit"}
                         onClick={handleEdit}
                         className="sm:w-27 text-start   hover:bg-gray-500">
@@ -121,6 +123,7 @@ const ContactCard = ({
                     </Buttons>
 
                     <Buttons
+                        type={"button"}
                         title={"Delete"}
                         onClick={handleDelete}
                         className="sm:w-27 text-start flex   hover:bg-red-500 ">
@@ -128,6 +131,7 @@ const ContactCard = ({
                     </Buttons>
 
                     <Buttons
+                        type={"button"}
                         onClick={() => setIsExpanded((p) => !p)}
                         className="  hover:text-gray-800 duration-300 hover:scale-125 border-none bg-transparent text-xs text-gray-300 ">
                         {isExpanded

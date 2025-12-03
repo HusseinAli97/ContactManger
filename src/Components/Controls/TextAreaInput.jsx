@@ -1,4 +1,10 @@
-const TextAreaInput = ({ children,name, label, value, onChange }) => {
+const TextAreaInput = ({
+    children,
+    name,
+    label,
+    value,
+    onChange,
+}) => {
     return (
         <div className="mb-4 lg:col-span-2">
             <label
@@ -7,7 +13,7 @@ const TextAreaInput = ({ children,name, label, value, onChange }) => {
                 {label}
             </label>
             <textarea
-                name="notes"
+                name={name}
                 id="notes"
                 value={value}
                 onChange={onChange}
