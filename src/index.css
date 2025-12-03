@@ -1,0 +1,7 @@
+@import "tailwindcss";
+body {
+    @apply bg-gray-900;
+    color: #333;
+    padding: 25px;
+    @apply font-mono;
+}
