@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { toast } from "react-toastify";
 import Buttons from "./Controls/Buttons";
 import Inputs from "./Controls/Inputs";
@@ -10,7 +10,16 @@ const ContactForm = ({
     editingContact,
     updateContactsList,
     setEditingContact,
+
 }) => {
+    const mapContact = (c) => ({
+        name: c.name || "",
+        phone: c.phone || "",
+        email: c.email || "",
+        category: c.category || "👪Family",
+        notes: c.notes || "",
+        isFavorite: !!c.isFavorite,
+    });
     // defaults
     const defaultForm = {
         name: "",
@@ -20,28 +29,29 @@ const ContactForm = ({
         notes: "",
         isFavorite: false,
     };
-
     // state
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [formData, setFormData] = useState(defaultForm);
+    const [isExpanded, setIsExpanded] = useState(editingContact);
+    const [formData, setFormData] = useState(() =>
+        editingContact ? mapContact(editingContact) : defaultForm
+    );
 
     // pre-fill when editingContact changes
-    useEffect(() => {
-        if (editingContact) {
-            setFormData({
-                name: editingContact.name || "",
-                phone: editingContact.phone || "",
-                email: editingContact.email || "",
-                category: editingContact.category || "👪Family",
-                notes: editingContact.notes || "",
-                isFavorite: !!editingContact.isFavorite,
-            });
-            setIsExpanded(true);
-        } else {
-            setFormData(defaultForm);
-            setIsExpanded(false);
-        }
-    }, [editingContact]);
+    // useEffect(() => {
+    //     if (editingContact) {
+    //         setFormData({
+    //             name: editingContact.name || "",
+    //             phone: editingContact.phone || "",
+    //             email: editingContact.email || "",
+    //             category: editingContact.category || "👪Family",
+    //             notes: editingContact.notes || "",
+    //             isFavorite: !!editingContact.isFavorite,
+    //         });
+    //         setIsExpanded(true);
+    //     } else {
+    //         setFormData(defaultForm);
+    //         setIsExpanded(false);
+    //     }
+    // }, [editingContact]);
 
     const isEditMode = Boolean(editingContact);
 

@@ -8,8 +8,8 @@ const ContactList = ({
 }) => {
     if (!contacts || contacts.length === 0) {
         return (
-            <p className="text-lg text-gray-400 my-4 p-2 border rounded-2xl">
-                No Contacts Yet
+            <p className="text-lg text-gray-400 my-4 p-2 border rounded-2xl text-center">
+                No Contacts Add Yet
             </p>
         );
     }
