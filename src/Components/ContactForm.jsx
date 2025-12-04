@@ -41,7 +41,6 @@ const ContactForm = ({
             setFormData(defaultForm);
             setIsExpanded(false);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editingContact]);
 
     const isEditMode = Boolean(editingContact);
@@ -202,20 +201,6 @@ const ContactForm = ({
                         </div>
 
                         {/* notes */}
-                        <div className="mb-4 lg:col-span-2">
-                            <label
-                                htmlFor="notes"
-                                className="font-semibold block m-1">
-                                Notes
-                            </label>
-                            <textarea
-                                name="notes"
-                                id="notes"
-                                value={formData.notes}
-                                onChange={handleChange}
-                                className="w-full bg-gray-700 p-2 rounded-lg"
-                            />
-                        </div>
                         <TextAreaInput
                             name={"notes"}
                             label={"Notes"}
